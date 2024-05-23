@@ -52,6 +52,7 @@
     ]
 
     let person = arr.findIndex((el)=>el.userName === "Asker")
+    console.log(person);
     //return index elem {userName:"Asker",age:26}
 }
 //destructure

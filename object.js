@@ -115,11 +115,34 @@
  //////////////////////////////////////////////////
  //Данный участок кода выдает ошибку так как ранее выше в configurable мы задали значение false
  //Что значит последующая настройка или правка объекта посредством  Object.defineProperty приведет к ошибке
-  Object.defineProperty(SomeObject,"a",{
-      value:3,
-      writable:true,
-      configurable:true,
-      enumerable:true
-  })
+  // Object.defineProperty(SomeObject,"a",{
+  //     value:3,
+  //     writable:true,
+  //     configurable:true,
+  //     enumerable:true
+  // })
   //////////////////////////////////////////////////
+}
+
+//get and set
+{
+  const person  = {
+     name:"Asker",
+     lastname:"kotsev",
+
+     get year(){
+      return this.age
+     },
+     get fullname(){
+        return this.name + " " +  this.lastname
+     },
+
+     set year(value){
+          this.age = 2024 - value
+     }
+  }
+
+  console.log(person.fullname);
+  person.year = 1998
+  console.log(person.age);
 }

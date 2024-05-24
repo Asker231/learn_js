@@ -53,7 +53,7 @@
 
     let person = arr.findIndex((el)=>el.userName === "Asker")
     console.log(person);
-    //return index elem {userName:"Asker",age:26}
+    //return index elem == 0 {userName:"Asker",age:26}
 }
 //destructure
 {
@@ -72,5 +72,13 @@
         {userName:"Hloe",age:27}
     ].reverse()
     //retunr reverse array [{userName:"Hloe",age:27},{userName:"Asker",age:26}]
+}
+//Syblol.iterator
+
+{
+  let arr = [1,2,3]
+  let iter  = arr[Symbol.iterator]()
+
+  console.log(iter.next());
 }
 

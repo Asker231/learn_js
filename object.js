@@ -152,6 +152,13 @@
      x:10,
      y:20
   }
+
+
+  delete obj['x']
+
+  console.log(obj?.x ?? "none");
+
+
   console.log('x' in obj);
 
 }

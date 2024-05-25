@@ -54,7 +54,7 @@
         }
     }
     let [min] = array
-    let max = array[array.length-1]
+    let max = array[array.length - 1 ]
     console.log("min is : " + min, "max is: " + max);
 
 }

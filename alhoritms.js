@@ -38,19 +38,23 @@
     }
 }
 
-//bubble sort
+//get min and max array
 {
-   Array.prototype.sortByAsker = function(array){
-        for(let i = 0; i< array.length;i++){
-            for (let elem = 0; elem < array.length-1-i; elem++) {
-                if(array[elem] > array[elem + 1]){
-                    let buffer = array[elem]
-                    array[elem] = array[elem+1]
-                    array[elem+1] = buffer
-                }
+    let array = [567,322,1982,11,998,23,16,576,123,11,98]
+    const setArray = new Set(array)
+    array = [...setArray]
+    
+    for(let i = 0;i < array.length;i++){
+        for(let k = 0; k<array.length-1-i;k++){
+            if(array[k] > array[k+1]){
+                let bufer = array[k]
+                array[k] = array[k+1]
+                array[k+1] = bufer
             }
         }
-   }
+    }
+    let [min] = array
+    let max = array[array.length-1]
+    console.log("min is : " + min, "max is: " + max);
 
-   let array = [2,1,5,34,6545644,1123,9].sortByAsker()
 }

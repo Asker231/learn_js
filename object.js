@@ -146,3 +146,13 @@
   person.year = 1998
   console.log(person.age);
 }
+
+{
+  const obj = {
+     x:10,
+     y:20
+  }
+  console.log('x' in obj);
+
+}
+

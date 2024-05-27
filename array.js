@@ -1,83 +1,117 @@
 //forEach
+//Этот метод в качестве предиката принимает функцию которая срабатывает для каждого элемента
+//forEach не возвращает новый массив
 {
-    let arr = [1,2,3,4,5,6,7]
-    arr.forEach((el)=>el+1)
-    //return numbers 2,3,4,5,6,7,8
+    let array = [1,2,3]
+    array.forEach((el)=>{
+        console.log(el+1);
+    })
 }
 //map
+//напротив этот метод возвращает новый массив
 {
-    let arr = [1,2,3,4,5,6,7].map((el)=>el*2)
-    //return new array where value = [2,4,6,8,10,12,14]
-
+ let array = [1,2,3]
+ let res = array.map((el)=>{
+    return el + 2
+ })
+ console.log(res);
 }
 //reduce
+//данный метод аккумулирует елементы если это надо и принимает в качестве предиката функцию , 
+//а вторым аргументом число которое надо добавить к результату 
+//он не возвращает массив 
+//возвращает число
 {
-    let arr = [1,2,3,4,5,6,7].reduce((acc,element)=>acc+element,10)
-    //retunr a total number = 38
+   let array = [1,2,3]
+   let res = array.reduce((acc,el)=>{
+    return acc+=el
+   },10)
+   console.log(res);
 }
 //slice
+//проще говоря возвращает срез массива 
 {
-    let arr = [1,2,3,4,5,6,7].slice(1,3)
-    //return slice index 1-3 =  [2,3]
+  let array = [1,2,3,4,5,6]
+  let res = array.slice(0,2)//[1,2]
+  console.log(res);
 
 }
 //splice
+//отличается метод тем что переданные индексы удаляются и при желании можно их заполнить 
 {
-    let arr = [1,2,3,4,5,6,7]
-     arr.splice(0,2,...[9,12])
-     //retunr splice array [9,12,3,4,5,6,7]
+  let array = [1,2,3,4,5,6,7]
+  array.splice(1,1,12)//[1,12,3,4,5,6,7]
+  console.log(array);
 
 }
 //for of
+//проводит перебор значений а не индексов
 {
-    let arr = [1,2,3,4,5,6,7]
-    for(let i of arr){
-        //return value [1,2,3,4,5,6,7]
-    }
+ let array = [1,2,3]
+   for(let i of array){
+    console.log(array);
+   } 
 }
 //find
 {
-    let arr = [
-        {userName:"Asker",age:26},
-        {userName:"Hloe",age:27}
+    let array  = [
+        {
+            name:"Jhon",
+            age:22
+        },
+        {
+            name:"Asker",
+            age:34
+        }
     ]
-    let person = arr.find((el)=>el.age === 27)
-    //return item {userName:"Hloe",age:27}
+    let res = array.find((el)=>el.name === "Asker")
+
+    console.log(res);//{ name: 'Asker', age: 34 }
 }
 //findIndex
+//аналог find но возвращает индекс 
 {
-    let arr = [
-        {userName:"Asker",age:26},
-        {userName:"Hloe",age:27}
+    let array  = [
+        {
+            name:"Jhon",
+            age:22
+        },
+        {
+            name:"Asker",
+            age:34
+        }
     ]
+    let res = array.findIndex((el)=>el.name === "Asker")
+    console.log(res);//1
 
-    let person = arr.findIndex((el)=>el.userName === "Asker")
-    console.log(person);
-    //return index elem == 0 {userName:"Asker",age:26}
 }
 //destructure
+//деструктуризация способ вытащить из объекта или массива то что нам надо
 {
-    let arr = [
-        {userName:"Asker",age:26},
-        {userName:"Hloe",age:27}
+    let array  = [
+        {
+            name:"Jhon",
+            age:22
+        },
+        {
+            name:"Asker",
+            age:34
+        }
     ]
-    let [first,second] = arr
-    //first = {userName:"Asker",age:26}
-    //second = {userName:"Hloe",age:27}
+
+    const[firstobject,...other] = array
+    console.log(firstobject);//{ name: 'Jhon', age: 22 }
 }
 //reverce
+//метод говорит сам за себя
 {
-    let arr = [
-        {userName:"Asker",age:26},
-        {userName:"Hloe",age:27}
-    ].reverse()
-    //retunr reverse array [{userName:"Hloe",age:27},{userName:"Asker",age:26}]
+    let array = [1,2,3]
+    console.log(array.reverse());
 }
 //Syblol.iterator
-
 {
-
-    
-  
+    let array = [1,2,3]
+    let iter = array[Symbol.iterator]()
+    console.log(iter.next());///{ value: 1, done: false }
 }
 
